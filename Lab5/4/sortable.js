@@ -156,7 +156,7 @@ function TableAccessor(table) {
 				self[i][0].cell.click(self[i][0].clickHandler);						
 		}
 	}	
-	return this;
+	return this;	
 }
 
 function initSortable(){

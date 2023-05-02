@@ -9,12 +9,10 @@
 			<span style="color:yellow">Rows :</span><select id="RowsInput"></select>
 			<span style="color:yellow">Cols :</span><select id="ColsInput"></select>
 			<span style="color:yellow">Card face :</span><select id="FaceInput"><option>numbers</option><option>images</option></select>
-			<button onclick="generateBoard()">Generate</button>
+			<button id="genBtn">Generate</button>
 		</div>
 		
-		<div id="MemoBoard" rows="4" cols="4" cards="numbers">
-		
-		</div>
+		<div id="MemoBoard" rows="4" cols="4" cards="#"></div>
 			
 	</body>	
 	
@@ -51,11 +49,13 @@
 			generateColsInput();
 			
 			function generateBoard() {				
-				board.attr("rows", rowsInput.value);
-				board.attr("cols", colsInput.value);
-				board.attr("cards", faceInput.value);
+				board.attr("rows", rowsInput.val());
+				board.attr("cols", colsInput.val());
+				board.attr("cards", faceInput.val());
 				var game = new MemoGame(board);
 			}		
+			
+			$("#genBtn").click(generateBoard);
 		});			
 	</script>
 </html>
